@@ -1,5 +1,9 @@
 import { useContext, createContext, useState } from "react";
 
+type LoginType = {
+  email: string;
+  name: string;
+};
 interface ProviderProps {
   user: string | null;
   token: string;

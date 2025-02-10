@@ -2,8 +2,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -14,7 +12,7 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
-      password: data.get("password"),
+      name: data.get("name"),
     });
   };
 
@@ -43,18 +41,15 @@ export default function SignIn() {
             id="email"
             label="Email Address"
             name="email"
-            autoComplete="email"
             autoFocus
           />
           <TextField
             margin="normal"
             required
             fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
+            name="name"
+            label="Name"
+            type="text"
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -68,18 +63,6 @@ export default function SignIn() {
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid size={{ xs: 6 }}>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
         </Box>
       </Box>
     </Container>
